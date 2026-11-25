@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>GramTypo</title>
+</head>
+<body>
+  <header class="hdr">
+    <div class="brand">
+      <div class="logo">G</div>
+      <div class="brandtxt"><span class="name">GramTypo</span><span class="sub">виправлення та покращення тексту</span></div>
+    </div>
+    <div class="hdractions">
+      <button class="icon" id="gear" title="Налаштування">&#9881;</button>
+      <button class="icon" id="close" title="Закрити">&#10005;</button>
+    </div>
+  </header>
+
+  <div class="modes">
+    <button class="mode active" data-mode="correct">Тільки виправлення</button>
+    <button class="mode" data-mode="improve">Покращити</button>
+  </div>
+
+  <div class="tones">
+    <span class="tonelabel">Тон</span>
+    <button class="chip active" data-tone="neutral">Як є</button>
+    <button class="chip" data-tone="formal">Формально</button>
+    <button class="chip" data-tone="friendly">Дружньо</button>
+    <button class="chip" data-tone="concise">Коротко</button>
+    <button class="chip" data-tone="diplomatic">Дипломатично</button>
+  </div>
+
+  <main class="panes">
+    <section class="pane">
+      <div class="panehdr"><span>Оригінал</span><span class="meta" id="srcMeta"></span></div>
+      <textarea id="input" placeholder="Виділи текст у будь-якому застосунку й натисни хоткей — або встав сюди"></textarea>
+    </section>
+    <section class="pane">
+      <div class="panehdr"><span>GramTypo</span><span class="meta ok" id="outMeta"></span></div>
+      <div id="output" class="paneBody"><span class="ph">результат з'явиться тут</span></div>
+    </section>
+  </main>
+
+  <div class="notes" id="notes"></div>
+
+  <footer class="ftr">
+    <div class="ftractions">
+      <button class="primary" id="replace">Замінити в полі</button>
+      <button class="ghost" id="copy">Копіювати</button>
+      <button class="ghost" id="again">Ще варіанти</button>
+    </div>
+    <div class="hint"><kbd id="kbd">ctrl</kbd><kbd>P</kbd> виклик &middot; <kbd>esc</kbd> закрити</div>
+  </footer>
+
+  <div class="settings" id="settings">
+    <div class="srow"><label>Провайдер</label>
+      <select id="provider">
+        <option value="mock">Mock (без ключа)</option>
+        <option value="venice">Venice</option>
+        <option value="openai">OpenAI</option>
+        <option value="anthropic">Anthropic</option>
+        <option value="ollama">Ollama (локально)</option>
+      </select>
+    </div>
+    <div class="srow"><label>Модель</label><input id="model" type="text" /></div>
+    <div class="srow"><label>API-ключ</label><input id="apiKey" type="password" /></div>
+    <div class="srow"><label>Захоплювати виділення</label><input id="captureSelection" type="checkbox" /></div>
+    <div class="srow"><label>Версія</label><span id="ver" class="ver">—</span></div>
+    <div class="srow"><label>Оновлення</label><button class="ghost" id="checkUpd">Перевірити</button></div>
+    <div class="updbar" id="updbar"></div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+:root{--bg:#14161b;--fg:#e8eaf0;--muted:#8b93a7;--line:#262a33;--accent:#5b8cff;--ok:#35c46b;--warn:#f0a638;--err:#f0556b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:13px/1.5 ui-sans-serif,-apple-system,"Segoe UI",Inter,sans-serif;height:100vh;display:flex;flex-direction:column;overflow:hidden;user-select:none}
+.hdr{display:flex;align-items:center;justify-content:space-between;padding:11px 14px;border-bottom:1px solid var(--line);-webkit-app-region:drag}
+.brand{display:flex;gap:9px;align-items:center}
+.logo{width:26px;height:26px;border-radius:7px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:600}
+.brandtxt{display:flex;flex-direction:column;line-height:1.15}
+.name{font-weight:600}
+.sub{color:var(--muted);font-size:11px}
+.hdractions{display:flex;gap:4px;-webkit-app-region:no-drag}
+.icon{width:26px;height:26px;border:0;border-radius:6px;background:transparent;color:var(--muted);cursor:pointer;font-size:13px}
+.icon:hover{background:#1e222b;color:var(--fg)}
+.modes{display:flex;gap:4px;padding:10px 14px 0}
+.mode{border:1px solid var(--line);background:transparent;color:var(--muted);padding:5px 11px;border-radius:999px;font-size:12px;cursor:pointer}
+.mode.active{background:var(--accent);border-color:transparent;color:#fff}
+.tones{display:flex;align-items:center;gap:5px;padding:9px 14px 11px;flex-wrap:wrap}
+.tonelabel{color:var(--muted);font-size:10.5px;text-transform:uppercase;letter-spacing:.05em}
+.chip{border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:999px;padding:3px 10px;font-size:11.5px;cursor:pointer}
+.chip.active{color:var(--fg);border-color:var(--accent);background:#1c2130}
+.panes{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border-top:1px solid var(--line);flex:1;min-height:0}
+.pane{background:var(--bg);display:flex;flex-direction:column;min-height:0}
+.panehdr{display:flex;justify-content:space-between;padding:8px 12px 4px;font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.meta.ok{color:var(--ok)}
+textarea,.paneBody{flex:1;margin:0;padding:0 12px 12px;border:0;background:transparent;color:var(--fg);font:inherit;font-size:13.5px;line-height:1.62;resize:none;outline:none;overflow-y:auto;user-select:text}
+.ph{color:#4d5567}
+.add{color:var(--ok);background:rgba(53,196,107,.13);border-radius:3px;padding:0 1px}
+.del{color:var(--err);text-decoration:line-through;opacity:.65}
+.notes{padding:8px 14px;display:none;flex-direction:column;gap:4px;border-top:1px solid var(--line);background:#171a21;max-height:88px;overflow-y:auto}
+.notes.on{display:flex}
+.note{font-size:11.5px;color:var(--muted);display:flex;gap:7px;align-items:baseline}
+.dot{width:5px;height:5px;border-radius:50%;flex:0 0 auto}
+.dot.error{background:var(--err)}
+.dot.style{background:var(--warn)}
+.ftr{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-top:1px solid var(--line);gap:10px}
+.ftractions{display:flex;gap:6px}
+.primary{background:var(--accent);color:#fff;border:0;border-radius:7px;padding:6px 13px;font-size:12.5px;font-weight:600;cursor:pointer}
+.primary:disabled{opacity:.45;cursor:default}
+.ghost{background:transparent;color:var(--fg);border:1px solid var(--line);border-radius:7px;padding:6px 11px;font-size:12.5px;cursor:pointer}
+.ghost:hover{border-color:#3a4150}
+.hint{color:var(--muted);font-size:11px}
+kbd{border:1px solid var(--line);border-radius:4px;padding:0 4px;font-size:10.5px;font-family:inherit}
+.settings{display:none;padding:11px 14px 14px;border-top:1px solid var(--line);flex-direction:column;gap:8px}
+.settings.on{display:flex}
+.srow{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:12px}
+.srow label{color:var(--muted)}
+.srow select,.srow input[type=text],.srow input[type=password]{background:#1b1f27;border:1px solid var(--line);color:var(--fg);border-radius:6px;padding:4px 8px;font:inherit;width:210px}
+.ver{color:var(--muted);font-variant-numeric:tabular-nums}
+.updbar{display:none;font-size:11.5px;color:var(--muted);line-height:1.5}
+.updbar.on{display:block}
+.updbar b{color:var(--fg);font-weight:600}
